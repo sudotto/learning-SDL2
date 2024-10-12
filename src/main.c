@@ -3,6 +3,8 @@
 
 int main(){
 
+	SDL_Surface *test = SDL_LoadBMP("testimg.bmp");
+
 	SDL_Init(SDL_INIT_VIDEO);
 
 	SDL_Window *window = SDL_CreateWindow("SDL", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 680, 480, 0);
@@ -19,6 +21,7 @@ int main(){
 				running = 0;
 			}
 		}
+		SDL_BlitSurface(test, NULL, window_surface, NULL);
 		SDL_UpdateWindowSurface(window);
 	}
 	SDL_Quit();
